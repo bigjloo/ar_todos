@@ -5,7 +5,7 @@ class Main
     user_input = ARGV
     case user_input[0]
     when "list"
-      View.list
+      Todo.list
     when "delete"
       Todo.delete(ARGV[1])
     when "add"

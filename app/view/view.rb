@@ -1,16 +1,16 @@
-require_relative '../../app/models/task.rb'
-require_relative '../../app/controllers/todo.rb'
+
 
 class View
-  def self.add(id, name)
+  def self.display_add_result(id, name)
     puts "#{id}) #{name} - added!"
   end
 
-  def self.list
-    list = Task.all.order(completed: :asc)
-    list.each do |task|
-      puts "#{task.id}) #{task.name} (#{task.completed?})"
-    end
+  def self.display_list(task_id, task_name, task_completed)
+    # list = Task.all.order(completed: :asc)
+    # list.each do |task|
+
+      puts "#{task_id}) #{task_name} (#{task_completed})"
+    # end
   end
 
   def self.delete(name)
@@ -19,5 +19,9 @@ class View
 
   def self.completed(name)
     puts "Completed '#{name}' from your TODO list"
+  end
+
+  def self.display_error
+    puts "Error. Input invalid"
   end
 end
